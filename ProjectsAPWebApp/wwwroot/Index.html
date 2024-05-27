@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lab2 Projects</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <h1>Lab2 Projects</h1>
+    <h3>Add Admin</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addAdmin()">
+        <input type="text" id="add-name" placeholder="New Admin">
+        <input type="text" id="add-companyId" placeholder="CompanyId">
+        <input type="submit" value="Add">
+    </form>
+
+    <div id="editForm" style="display:none;">
+        <h3>Edit Admin</h3>
+        <form action="javascript:void(0);" onsubmit="updateAdmin()">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-name" placeholder="Name">
+            <input type="text" id="edit-companyId" placeholder="CompanyId">
+            <input type="submit" value="Save">
+            <button type="button" onclick="closeInput()">Cancel</button>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>CompanyId</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody id="admins"></tbody>
+    </table>
+
+    <script src="js/lab2.js"></script>
+    <script type="text/javascript">
+        getAdmins();
+    </script>
+</body>
+</html>
